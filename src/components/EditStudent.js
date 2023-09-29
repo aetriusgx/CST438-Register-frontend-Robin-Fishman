@@ -24,7 +24,7 @@ const EditStudent = (props) => {
 
     let handleStudentEdit = () => {
         fetch(`http://localhost:8080/student/edit?email=${email}&name=${name}&status=${status}&status_code=${statusCode}`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             }
