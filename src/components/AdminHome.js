@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 import EditStudent from './EditStudent';
+import DeleteStudent from './DeleteStudent';
 
 const AdminHome = () => {
   const [studentList, setStudentList] = useState([]);
@@ -31,9 +32,11 @@ const AdminHome = () => {
         <BrowserRouter>
           <div>
             <Link to='edit'>Edit Student</Link>{' '}
+            <Link to='delete'>Delete Student</Link>{' '}
 
             <Switch>
               <Route path='/edit' component={EditStudent} />
+              <Route path='/delete' component={DeleteStudent} />
             </Switch>
           </div>
         </BrowserRouter>
