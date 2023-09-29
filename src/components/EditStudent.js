@@ -23,17 +23,11 @@ const EditStudent = (props) => {
     }
 
     let handleStudentEdit = () => {
-        fetch('http://localhost:8080/student/edit', {
+        fetch(`http://localhost:8080/student/edit?email=${email}&name=${name}&status=${status}&status_code=${statusCode}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                name: name,
-                status: status,
-                statusCode: statusCode
-            }),
+            }
         })
             .then(res => res.json())
             .then(data => {
